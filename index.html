@@ -7,6 +7,30 @@
 </head>
 <body>
     <h1>CRUD Operation in Local Storage</h1>
-    
+    <div class="form">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="Enter Name" class="input">
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" placeholder="Enter Email" class="input">
+        <label for="phone">Phone No.: </label>
+        <input type="text" name="phone" id="phone" placeholder="Enter Phone" class="input">
+        <button class="submit" id="submit" onclick="addPerson()">Submit</button>
+    </div>
+    <div id="table">
+        <table>
+            <thead>
+                <tr>
+                    <th>S. No.</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone No.</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+    <script src="./index.js"></script>
 </body>
 </html>
