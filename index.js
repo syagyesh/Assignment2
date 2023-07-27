@@ -10,7 +10,8 @@ if(localStorage.getItem("peopleList") === null){
 }
 
 const ValidateForm = () => {
-    if (name.value === "" || email.value === "" || phone.value === "" || email.value.includes("@") === false) {
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (name.value === "" || email.value === "" || phone.value === "" || !validRegex.test(email.value)) {
         alert("Please fill all the fields");
         return false;
     } else {
@@ -37,8 +38,8 @@ const showData = () => {
             <td>${person.name}</td>
             <td>${person.email}</td>
             <td>${person.phone}</td>
-            <td><button onclick="editPerson(${index})">Edit</button></td>
-            <td><button onclick="deletePerson(${index})">Delete</button></td>
+            <td class="action-btn"><button onclick="editPerson(${index})">Edit</button>
+            <button onclick="deletePerson(${index})">Delete</button></td>
         </tr>
         `;
     });
